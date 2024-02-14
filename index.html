@@ -130,6 +130,19 @@ object-fit: cover;
     var fullscreenGif = document.getElementById('fullscreenGif');
     var isPlaying = false;
 
+    // Function to handle entering and exiting fullscreen
+    function handleFullscreenChange() {
+        if (!document.fullscreenElement) {
+            // If exiting fullscreen
+            fullscreenGif.style.display = 'none';
+            audioPlayer.pause();
+            isPlaying = false;
+        }
+    }
+
+    // Listen for the fullscreenchange event
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+
     document.getElementById('gifLink').addEventListener('click', function (event) {
         event.preventDefault();
 
@@ -139,15 +152,16 @@ object-fit: cover;
             audioPlayer.play();
             isPlaying = true;
 
-            setTimeout(function () {
+            // Listen for the end of audio playback
+            audioPlayer.addEventListener('ended', function () {
                 fullscreenGif.style.display = 'none';
                 document.exitFullscreen();
-                audioPlayer.pause();
                 isPlaying = false;
-            }, 3000); 
+            });
         }
     });
 </script>
+
 
 
 
