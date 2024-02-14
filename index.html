@@ -160,6 +160,14 @@ object-fit: cover;
             });
         }
     });
+
+    // Check if the user is on a mobile device
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+        // Remove the video element if the user is on a mobile device
+        var videoBackground = document.getElementById('video-background');
+        videoBackground.parentNode.removeChild(videoBackground);
+    }
 </script>
 
 
