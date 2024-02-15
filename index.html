@@ -117,6 +117,7 @@ object-fit: cover;
 <script>
     var audioPlayer = document.getElementById('audioPlayer');
     var fullscreenGif = document.getElementById('fullscreenGif');
+    var gifImage = document.getElementById('gifImage');
     var isPlaying = false;
 
     document.getElementById('gifLink').addEventListener('click', function (event) {
@@ -126,6 +127,7 @@ object-fit: cover;
             fullscreenGif.style.display = 'block';
             document.documentElement.requestFullscreen();
             audioPlayer.play();
+            gifImage.style.display = 'inline'; // Show the GIF
             isPlaying = true;
 
             // Listen for the 'ended' event of the audio player
