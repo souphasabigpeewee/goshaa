@@ -114,6 +114,7 @@ object-fit: cover;
     <audio id="audioPlayer" src="assets/nightmare-jumpscare.mp3" preload="auto"></audio>
 </div>
 
+
 <script>
     var audioPlayer = document.getElementById('audioPlayer');
     var fullscreenGif = document.getElementById('fullscreenGif');
@@ -130,12 +131,11 @@ object-fit: cover;
             gifImage.style.display = 'inline'; // Show the GIF
             isPlaying = true;
 
-            // Listen for the 'ended' event of the audio player
-            audioPlayer.addEventListener('ended', function() {
+            setTimeout(function () {
                 fullscreenGif.style.display = 'none';
                 document.exitFullscreen();
                 isPlaying = false;
-            });
+            }, 1000); // Close after 1 second
         }
     });
 </script>
