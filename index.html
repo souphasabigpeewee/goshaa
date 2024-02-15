@@ -128,12 +128,12 @@ object-fit: cover;
             audioPlayer.play();
             isPlaying = true;
 
-            setTimeout(function () {
+            // Listen for the 'ended' event of the audio player
+            audioPlayer.addEventListener('ended', function() {
                 fullscreenGif.style.display = 'none';
                 document.exitFullscreen();
-                audioPlayer.pause();
                 isPlaying = false;
-            }, 3000); 
+            }, { once: true }); // Use { once: true } to ensure the event listener is called only once
         }
     });
 </script>
