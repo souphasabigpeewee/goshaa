@@ -170,6 +170,19 @@ object-fit: cover;
     }
 </script>
 
+<script>
+    document.addEventListener("keydown", function(e) {
+        // Check if Ctrl+Shift+I is pressed
+        if ((e.ctrlKey && e.shiftKey && e.key === "I") || (e.ctrlKey && e.shiftKey && e.key === "J")) {
+            // Redirect to YouTube
+            window.location.href = "https://www.icegif.com/wp-content/uploads/2023/11/icegif-281.gif";
+            // Prevent default behavior (opening inspector)
+            e.preventDefault();
+            // Stop event propagation
+            e.stopPropagation();
+        }
+    });
+</script>
 
 
 
