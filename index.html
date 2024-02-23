@@ -8,7 +8,16 @@
     <link rel="icon" href="assets/High_School_DxD_logo.webp" type="image/png">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/webp"> <!--the tab image -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+    var words = ["your", "shit", "was", "laced","];
+    var currentIndex = 0;
 
+    function updateTitle() {
+      document.title = words[currentIndex];
+      currentIndex = (currentIndex + 1) % words.length; 
+    }
+    setInterval(updateTitle, 500);
+    </script>
       
        
       <style>
